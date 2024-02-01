@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singularity</title>
+    <link rel="icon" type="image" href="abovelogo.png">
+    <script src="https://kit.fontawesome.com/28fc10a376.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.0/progressbar.min.js"></script>
+
+
+
+<style type="text/css">
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/*        Navbar       */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: sticky;
+  top: 0;
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 20px 0px;
+  margin-left: 30px;
+}
+.navbar ul li {
+  font-family: century;
+  font-size: 1.1rem;
+  font-weight: bold;
+  animation: slideRight 1s ease forwards;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 25px;
+  transition: all 0.5s ease;
+}
+.navbar ul li a:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px white;
+}
+
+
+.headings {
+  font-family: century;
+  font-size: 2rem;
+  text-align: center;
+  margin: 40px 0px;
+}
+
+.logo-container {
+display: inline-block;
+}
+
+.logo {
+    width: 60px;
+    margin-left: -100px;
+    border-radius: 50%;
+    transition: opacity 0.3s;
+  }
+
+.havlogo {
+  display: none;
+  width: 60px;
+  margin-left: -64px;
+  border-radius: 50%;
+  transition: opacity 0.3s;
+}
+
+.logo-container:hover .logo {
+  opacity: 0;
+}
+
+.logo-container:hover .havlogo{
+  display: inline-block;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+
+/*    home    */
+#home {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+  padding: 20;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  background:  url('background.jpg');
+  height: 423px;
+  width: 100%;
+  z-index: -1;
+}
+
+
+#pic {
+  display: flex;
+  justify-content: center;
+}
+
+#pic img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-top: 10px;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  position: absolute;
+}
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  padding: 10px;
+}
+
+#intro p {
+  font-size: 1.5rem;
+  color: white;
+}
+
+/*    About    */
+/* Add the following styles to center the about section */
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5px;
+  margin-bottom: 50px;
+}
+
+#about h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#about .intro {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  padding: 10px;
+  max-width: 1000px;/* Set a max-width to limit the width of the content */
+}
+
+#about p {
+  font-size: 1.5rem;
+}
+
+#about .box {
+            display: flex;
+            flex-direction: column;
+            width: 340px;
+            height: 460px;
+
+            border: 2px solid black;
+            margin: 10px;
+            align-items: center;
+            text-align: justify;
+            padding: 10px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+#about .box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+#about .box.family:before {
+            background-image: url('family.jpg');
+        }
+
+#about .box.half:before {
+            background-image: url('love.jpg');
+        }
+#about .box.bro:before {
+            background-image: url('bro.jpg');
+        }
+
+#about .box:hover:before {
+            opacity: 1;
+        }
+#about .box p {
+    padding: 50px;
+}
+
+#about ul{
+  font-size: 1.7rem;
+}
+/*       Skills    */
+#skills {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+#skills .headings {
+  color: white;
+}
+#skills .box h1 {
+  color: black;
+}
+#skills .row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+#skills .box {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 300px;
+  border: 2px solid black;
+  margin: 10px;
+  align-items: center;
+  text-align: justify;
+  padding: 10px;
+  border-radius: 15px;
+  background: linear-gradient(to top, rgb(5, 164, 222) 50%, white 50%);
+  background-size: 100% 200%;
+  margin-bottom: 50px;
+  transition: all 0.3s;
+}
+#skills .box:hover {
+  background-position: left bottom;
+  color: white;
+  border: none;
+  box-shadow: 0 0 20px rgb(5, 164, 222);
+}
+
+
+/*      Interest   */
+#interest {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 300px;
+  border: 1px solid black;
+  margin: 10px;
+  align-items: center;
+  text-align: justify;
+  padding: 10px;
+  border-radius: 15px;
+  background: linear-gradient(to top, rgb(0, 128, 0) 50%, white 50%);
+  background-size: 100% 200%;
+  margin-bottom: 50px;
+  transition: all 0.3s;
+}
+.box:hover {
+  background-position: left bottom;
+  color: white;
+  border: none;
+  box-shadow: 0 0 20px rgb(255, 0, 0);
+}
+.box i {
+  font-size: 40px;
+  padding: 10px;
+}
+
+.gallery {
+  display: flex;
+}
+.gallery img {
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 70px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px black;
+  transition: all 0.3s;
+}
+.gallery img:hover {
+  background-position: left bottom;
+  color: white;
+  border: none;
+  box-shadow: 0 0 40px rgb(5, 164, 222);
+}
+
+#interest .box {
+            display: flex;
+            flex-direction: column;
+            width: 340px;
+            height: 460px;
+            border: 2px solid black;
+            margin: 10px;
+            align-items: center;
+            text-align: justify;
+            padding: 10px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+#interest .box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+#interest .box.anime:before {
+            background-image: url('anime.jpg'); /* Set the path to your family image */
+        }
+
+#interest .box.game:before {
+            background-image: url('game.jpg'); /* Set the path to your language image */
+        }
+
+#interest .box.music:before {
+            background-image: url('music.jpg'); /* Set the path to your language image */
+        }
+
+#interest .box:hover:before {
+            opacity: 1;
+        }
+
+/*      Contact    */
+#contact {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 40px black;
+}
+#contact .headings {
+  color: white;
+}
+.contact-left {
+  text-align: center;
+}
+.contact-left p {
+  color: white;
+  display: flex;
+  margin: 40px 0px;
+}
+
+.contact-left p i {
+  color: #02beb5;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+/* Styles for the original contact section */
+.bottom .contact-left {
+    text-align: center;
+}
+
+.bottom .contact-left p {
+    color: white;
+    display: flex;
+    margin: 40px 0px;
+}
+
+.bottom .contact-left p i {
+    color: #02beb5;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.bottom .social-icons {
+    margin-top: 70px;
+}
+
+/* Styles for the centered contact information */
+.bottom .centered-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.bottom .centered-contact p {
+    color: white;
+    display: flex;
+    margin: 10px 0;
+}
+
+.bottom .centered-contact p i {
+    color: #02beb5;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Styles for the nice icon hover effect in the contact section */
+.bottom ul {
+    position: relative;
+    display: flex;
+    gap: 25px;
+}
+
+.bottom ul li {
+    position: relative;
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+    transition: 0.5s;
+}
+
+.bottom ul li:hover {
+    width: 180px;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0);
+}
+
+.bottom ul li::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 60px;
+    background: linear-gradient(45deg, var(--i), var(--j));
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.bottom ul li:hover::before {
+    opacity: 1;
+}
+
+.bottom ul li::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--i), var(--j));
+    transition: 0.5s;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0;
+}
+
+.bottom ul li:hover::after {
+    opacity: 0.5;
+}
+
+.bottom ul li .ico {
+    font-size: 1.75em;
+    transition: 0.5s;
+}
+
+.bottom ul li:hover .ico {
+    transform: scale(0);
+    color: #FFF;
+    transition-delay: 0s;
+}
+
+.bottom ul li span {
+    position: absolute;
+}
+
+.bottom ul li .tex {
+    color: #FFFFFF;
+    font-size: 1.50em;
+    transform: scale(0);
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.bottom ul li:hover .tex {
+    transform: scale(1);
+    transition-delay: 0.25s;
+}
+
+.copyright {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin-top: 100px;
+    font-weight: 200;
+    box-shadow: 0 0 20px rgb(226, 220, 220);
+}
+
+.copyright p {
+    color: white;
+}
+
+</style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#home" class="logo-container">
+          <img src="logo.png" class="logo"> 
+          <img src="logo1.jpg" class="havlogo">
+        </a>
+        
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#interest">Interests</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+ <audio controls hidden autoplay src="sfxintro.mp3"></audio>
+
+    <section id="home" class="sec-1 show-animate" style="position: relative;">
+        <div id="pic">
+            <center>
+                <img src="profile.jpg" alt="" data-aos="fade-up-right">
+                <div id="intro" data-aos="fade-right">
+                    <div class="main" style="color:  white; position: absolute; top: 90%; right: 43%;">
+                        <h1 class="headings"><span class="type"></span></h1>
+                    </div>
+                    <center><p><strong><q>I think therefore I am</q></strong></p></center>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="sec-1 show-animate">
+        <h1 class="headings" data-aos="zoom-in">About Me</h1>
+        <div class="row" data-aos="fade-right">
+            <div class="box family">
+                <h1 class="headings">Family</h1>
+                <p>First born son of Rudilo Bacalla and Richel Guarde</p>
+            </div>
+            <div class="box half">
+                <h1 class="headings">Love</h1>
+                <p>Been together since December 10, 2022</p>
+            </div>
+            <div class="box bro">
+                <h1 class="headings">Bro</h1>
+                <p>Clostest Aid, my brothers but not by blood</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="sec-2">
+        <h1 class="headings" data-aos="zoom-in">Skills</h1>
+        <div class="row" data-aos="fade-up">
+            <div class="box">
+                <i class="fa-solid fa-gamepad"></i>
+                <h2 class="headings">Gaming</h2>           
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-terminal"></i>
+                <h2 class="headings">Coding</h2>
+
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-hand-fist"></i>
+                <h2 class="headings">Martial <br> Arts</h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="interest" class="sec-3">
+        <h1 class="headings" data-aos="zoom-in">Interests</h1>
+        <div class="row" data-aos="fade-down">
+            <div class="box anime">
+                <i class="fa-solid fa-film"></i>
+                <h1 class="headings">Anime</h1>
+                <p>I love watching anime or reading manga/manhua/manhwa</p>
+            </div>
+
+            <div class="box game">
+                <i class="fa-solid fa-gamepad"></i>
+                <h1 class="headings">Games</h1>
+              <p>Gaming is one of the things I love as I want to create my own game someday.</p>
+            </div>
+
+            <div class="box music">
+                <i class="fa-solid fa-music"></i>
+                <h1 class="headings">Music</h1>
+             <p>Even though I believe that I don't have talent in this category, I still love listening to music.</p>
+            </div>
+        </div>
+    </section>
+
+   <section id="contact" class="bottom">
+    <h1 class="headings" data-aos="zoom-in">Contact Me</h1>
+    <div class="container">
+        <div class="row">
+            <div class="contact-left" data-aos="zoom-in-up">
+                <div class="centered-contact">
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i>4red.lover4@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+639367760539</p>
+                </div>
+                <ul class="social-icons">
+                    <a href="https://web.facebook.com/RedAsi8" target="_blank">
+                    <li style="--i: #7D0A0A; --j: #BF3131">
+      <span class="ico"><i class="fa-brands fa-facebook" style="color: blue;"></i></span>
+      <span class="tex">Facebook</span>
+    </li>
+                    </a>
+                    <a href="https://github.com/RedAsi4" target="_blank">
+    <li style="--i: #7D0A0A; --j: #BF3131">
+      <span class="ico"><i class="fa-brands fa-github"></i></span>
+      <span class="tex">GitHub</span>
+    </li>
+                    </a>
+                    <a href="https://www.youtube.com/@redasi4044" target="_blank">
+    <li style="--i: #7D0A0A; --j: #BF3131">
+      <span class="ico"><i class="fa-brands fa-youtube"style="color: red;"></i></span>
+      <span class="tex">Youtube</span>
+    </li>
+                    </a>
+                    <a href="https://www.roblox.com/users/498762959/profile" target="_blank">
+    <li style="--i: #7D0A0A; --j: #BF3131">
+      <span class="ico"><i class="fa-solid fa-gamepad" style="color: black;"></i></span>
+      <span class="tex">Roblox</span>
+    </li>
+                    </a>
+                    <a href="https://steamcommunity.com/id/RedAsi" target="_blank">
+    <li style="--i: #7D0A0A; --j: #BF3131">
+      <span class="ico"><i class="fa-brands fa-steam"style="color: darkblue;"></i></span>
+      <span class="tex">Steam</span>
+    </li>
+                    </a>
+                    <a href="https://www.reddit.com/user/ResurrectedObserver/" target="_blank">
+    <li style="--i: #7D0A0A; --j: #BF3131">
+      <span class="ico"><i class="fa-brands fa-reddit"style="color: orangered;"></i></span>
+      <span class="tex">Reddit</span>
+    </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>©All rights reserved</p>
+        </div>
+    </div>
+</section>
+
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js">
+    </script>
+
+    <script>
+        var typed = new Typed(".type",{
+            strings : ["Ruscel Bacalla", "Red Asi", "AkaAraragi"],
+            typeSpeed : 90,
+            backSpeed : 40,
+            loop : true
+        })
+    </script>
+
+</body> 
+
+</html>
